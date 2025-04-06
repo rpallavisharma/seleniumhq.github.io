@@ -90,7 +90,7 @@ jobs:
           timeout_minutes: 20
           max_attempts: 2
           command: cd examples/ruby && bundle exec rspec
-          new_command_on_retry: DEBUG=true cd examples/ruby && bundle exec rspec --only-failures
+          new_command_on_retry: $env:DEBUG=true cd examples/ruby && bundle exec rspec --only-failures
       - name: Run tests on Linux/Mac
         if: matrix.os != 'windows'
         uses: nick-invision/retry@v3.0.2
@@ -98,4 +98,4 @@ jobs:
           timeout_minutes: 20
           max_attempts: 2
           command: cd examples/ruby && bundle exec rspec
-          new_command_on_retry: $env:DEBUG="true" cd examples/ruby && bundle exec rspec --only-failures
+          new_command_on_retry: DEBUG="true" cd examples/ruby && bundle exec rspec --only-failures
