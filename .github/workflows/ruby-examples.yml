@@ -97,10 +97,8 @@ jobs:
             cd examples/ruby
             bundle exec rspec
           new_command_on_retry: |
-            $env:DEBUG="true"
-            cd examples/ruby
-            bundle exec rspec --only-failures
-      - name: Run tests on Linux/Mac
+            cd examples/ruby; $env:DEBUG="true"; bundle exec rspec --only-failures
+      - name: Run tests on ${{ matrix.os }}
         if: matrix.os != 'windows'
         uses: nick-invision/retry@v3.0.2
         with:
@@ -110,6 +108,5 @@ jobs:
             cd examples/ruby
             bundle exec rspec
           new_command_on_retry: |
-            DEBUG="true"
             cd examples/ruby
-            bundle exec rspec --only-failures      
+            DEBUG=true bundle exec rspec --only-failures      

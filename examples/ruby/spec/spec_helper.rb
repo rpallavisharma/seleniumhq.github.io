@@ -32,6 +32,7 @@ RSpec.configure do |config|
   def start_session
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('disable-search-engine-choice-screen')
+    options.add_argument('--no-sandbox')
     @driver = Selenium::WebDriver.for(:chrome, options: options)
   end
 
