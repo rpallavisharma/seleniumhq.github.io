@@ -1,7 +1,9 @@
+const fs = require('fs');
+const os = require('os');
+const path = require('path');
 const Chrome = require('selenium-webdriver/chrome');
 const {Browser, Builder} = require("selenium-webdriver");
 const {getBinaryPaths} = require("selenium-webdriver/common/driverFinder");
-const options = new Chrome.Options();
 
 describe('Service Test', function () {
   it('Default service', async function () {
@@ -26,7 +28,10 @@ describe('Service Test', function () {
     let browserPath = paths.browserPath;
 
     options.setChromeBinaryPath(browserPath)
-    options.addArguments('--enable-logging', '--v=1');
+    const userDataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'chrome-profile-'));
+    options.addArguments(`--user-data-dir=${userDataDir}`);
+    options.addArguments('--no-sandbox');
+    options.addArguments('--disable-dev-shm-usage');
 
     let service = new Chrome.ServiceBuilder(driverPath)
 
@@ -38,6 +43,8 @@ describe('Service Test', function () {
 
     await driver.get('https://www.selenium.dev/selenium/web/blank.html');
     await driver.quit();
+    // 👉 Cleanup user data dir
+    fs.rmSync(userDataDir, { recursive: true, force: true });
   });
 
   it('Set port', async function () {
