@@ -44,7 +44,12 @@ namespace SeleniumDocs.Browsers
         [TestMethod]
         public void SetBrowserLocation()
         {
+            string userDataDir = System.IO.Path.Combine(System.IO.Path.GetTempPath(), System.IO.Path.GetRandomFileName());
+            System.IO.Directory.CreateDirectory(userDataDir);
             var options = new ChromeOptions();
+            options.AddArgument($"--user-data-dir={userDataDir}");
+            options.AddArgument("--no-sandbox");
+            options.AddArgument("--disable-dev-shm-usage");
 
             options.BinaryLocation = GetChromeLocation();
 
