@@ -87,7 +87,7 @@ find the frame using your preferred selector and switch to it.
  
 
 {{< tab header="Ruby" text=true >}}
-{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.cs#L26-L33" >}}
+{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.rb#L26-L33" >}}
 {{< /tab >}}
 
 
@@ -134,7 +134,7 @@ one found will be switched to.
   
 
 {{< tab header="Ruby" text=true >}}
-{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.cs#L36-L43" >}}
+{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.rb#L36-L43" >}}
 {{< /tab >}}
 
   {{< tab header="JavaScript" >}}
@@ -183,7 +183,7 @@ queried using _window.frames_ in JavaScript.
 {{< /tab >}}
 
 {{< tab header="Ruby" text=true >}}
-{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.cs#L46-L47" >}}
+{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.rb#L46-L47" >}}
 {{< /tab >}}
 
 
@@ -222,7 +222,7 @@ like so:
  
 
 {{< tab header="Ruby" text=true >}}
-{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.cs#L49-L50" >}}
+{{< gh-codeblock path="examples/ruby/spec/interactions/frames_spec.rb#L49-L50" >}}
 {{< /tab >}}
 
   {{< tab header="JavaScript" >}}
