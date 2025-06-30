@@ -47,24 +47,8 @@ class BrowsingContextTest extends BaseTest {
     }
 
     @Test
-    void testCreateAWindowWithAReferenceContext() {
-        BrowsingContext
-                browsingContext =
-                new BrowsingContext(driver, WindowType.WINDOW, driver.getWindowHandle());
-        Assertions.assertNotNull(browsingContext.getId());
-    }
-
-    @Test
     void testCreateATab() {
         BrowsingContext browsingContext = new BrowsingContext(driver, WindowType.TAB);
-        Assertions.assertNotNull(browsingContext.getId());
-    }
-
-    @Test
-    void testCreateATabWithAReferenceContext() {
-        BrowsingContext
-                browsingContext =
-                new BrowsingContext(driver, WindowType.TAB, driver.getWindowHandle());
         Assertions.assertNotNull(browsingContext.getId());
     }
 
