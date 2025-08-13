@@ -174,7 +174,7 @@ namespace SeleniumDocs.Browsers
         
         private string GetLogLocation()
         {
-            if (String.IsNullOrEmpty(_logLocation) && !File.Exists(_logLocation))
+            if (string.IsNullOrEmpty(_logLocation) && !File.Exists(_logLocation))
             {
                 _logLocation = Path.GetTempFileName();
             }
@@ -184,7 +184,7 @@ namespace SeleniumDocs.Browsers
 
         private string GetTempDirectory()
         {
-            if (String.IsNullOrEmpty(_tempPath) && !File.Exists(_tempPath))
+            if (string.IsNullOrEmpty(_tempPath) && !File.Exists(_tempPath))
             {
                 _tempPath = Path.GetTempPath();
             }
