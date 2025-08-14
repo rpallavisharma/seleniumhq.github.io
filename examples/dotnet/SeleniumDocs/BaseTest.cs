@@ -87,7 +87,7 @@ namespace SeleniumDocs
 
         private async Task EnsureGridIsRunningAsync()
         {
-            DateTime timeout = DateTime.Now.Add(TimeSpan.FromSeconds(30));
+            DateTime timeout = DateTime.Now.Add(TimeSpan.FromSeconds(240));
             bool isRunning = false;
             HttpClient client = new HttpClient();
 
@@ -102,12 +102,12 @@ namespace SeleniumDocs
                     }
                     else
                     {
-                        await Task.Delay(500);
+                        await Task.Delay(1000);
                     }
                 }
                 catch (HttpRequestException)
                 {
-                    await Task.Delay(500);
+                    await Task.Delay(1000);
                 }
             }
 
