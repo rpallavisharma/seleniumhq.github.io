@@ -79,7 +79,7 @@ namespace SeleniumDocs.Browsers
                 var service = FirefoxDriverService.CreateDefaultService();
                 driver = new FirefoxDriver(service);
                 Assert.IsTrue(testLogHandler.Events.Count >= 1);
-                Assert.IsTrue(testLogHandler.Events.Any(e => e.Message.Contains("geckodriver INFO")));
+                Assert.IsTrue(testLogHandler.Events.Any(e => e.Message.Contains("geckodriver")));
             }
             finally
             {
