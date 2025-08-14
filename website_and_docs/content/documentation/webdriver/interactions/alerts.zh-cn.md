@@ -19,7 +19,7 @@ WebDriver可以从弹窗获取文本并接受或关闭这些警告.
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" text=true >}}
-{{< gh-codeblock path="examples/java/src/test/java/dev/selenium/interactions/AlertsTest.java#L36-L41" >}}
+{{< gh-codeblock path="/examples/java/src/test/java/dev/selenium/interactions/AlertsTest.java#L36-L41" >}}
 {{< /tab >}}
 
 {{< tab header="Python" text=true >}}
@@ -68,7 +68,7 @@ alert.accept()
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" text=true >}}
-{{< gh-codeblock path="examples/java/src/test/java/dev/selenium/interactions/AlertsTest.java#L131-L138" >}}
+{{< gh-codeblock path="/examples/java/src/test/java/dev/selenium/interactions/AlertsTest.java#L131-L138" >}}
 {{< /tab >}}
 
 {{< tab header="Python" text=true >}}
@@ -124,7 +124,7 @@ alert.dismiss()
 
 {{< tabpane langEqualsHeader=true >}}
 {{< tab header="Java" text=true >}}
-{{< gh-codeblock path="examples/java/src/test/java/dev/selenium/interactions/AlertsTest.java#L79-L84" >}}
+{{< gh-codeblock path="/examples/java/src/test/java/dev/selenium/interactions/AlertsTest.java#L79-L84" >}}
 {{< /tab >}}
 
 {{< tab header="Python" text=true >}}
