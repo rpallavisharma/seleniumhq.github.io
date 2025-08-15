@@ -186,16 +186,15 @@ Let's consider a typical example: we want to manage chromedriver automatically. 
 
 ```
 $ ./selenium-manager --browser chrome --debug
-DEBUG   chromedriver not found in PATH
-DEBUG   chrome detected at C:\Program Files\Google\Chrome\Application\chrome.exe
-DEBUG   Running command: wmic datafile where name='C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe' get Version /value
-DEBUG   Output: "\r\r\n\r\r\nVersion=116.0.5845.111\r\r\n\r\r\n\r\r\n\r"
-DEBUG   Detected browser: chrome 116.0.5845.111
-DEBUG   Discovering versions from https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json
-DEBUG   Required driver: chromedriver 116.0.5845.96
-DEBUG   Downloading chromedriver 116.0.5845.96 from https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/116.0.5845.96/win64/chromedriver-win64.zip
-INFO    Driver path: C:\Users\boni\.cache\selenium\chromedriver\win64\116.0.5845.96\chromedriver.exe
-INFO    Browser path: C:\Program Files\Google\Chrome\Application\chrome.exe
+DEBUG chromedriver not found in PATH
+DEBUG chrome detected at C:\Program Files\Google\Chrome\Application\chrome.exe
+DEBUG Detected browser: chrome 139.0.7258.67
+DEBUG Discovering versions from https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json
+DEBUG Required driver: chromedriver 139.0.7258.68
+DEBUG Acquiring lock: C:\Users\boni\.cache\selenium\chromedriver\win64\139.0.7258.68\sm.lock
+DEBUG Downloading chromedriver 139.0.7258.68 from https://storage.googleapis.com/chrome-for-testing-public/139.0.7258.68/win64/chromedriver-win64.zip
+INFO  Driver path: C:\Users\boni\.cache\selenium\chromedriver\win64\139.0.7258.68\chromedriver.exe
+INFO  Browser path: C:\Program Files\Google\Chrome\Application\chrome.exe
 ```
 
 In this case, the local Chrome (in Windows) is detected by Selenium Manager. Then, using its version and the CfT endpoints, the proper chromedriver version (115, in this example) is downloaded to the local cache. Finally, Selenium Manager provides two results: i) the driver path (downloaded) and ii) the browser path (local).
@@ -204,18 +203,20 @@ Let's consider another example. Now we want to use Chrome beta. Therefore, we in
 
 ```
 $ ./selenium-manager --browser chrome --browser-version beta --debug
-DEBUG   chromedriver not found in PATH
-DEBUG   chrome not found in PATH
-DEBUG   chrome beta not found in the system
-DEBUG   Discovering versions from https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json
-DEBUG   Required browser: chrome 117.0.5938.22
-DEBUG   Downloading chrome 117.0.5938.22 from https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.22/win64/chrome-win64.zip
-DEBUG   chrome 117.0.5938.22 has been downloaded at C:\Users\boni\.cache\selenium\chrome\win64\117.0.5938.22\chrome.exe
-DEBUG   Discovering versions from https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json
-DEBUG   Required driver: chromedriver 117.0.5938.22
-DEBUG   Downloading chromedriver 117.0.5938.22 from https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/117.0.5938.22/win64/chromedriver-win64.zip
-INFO    Driver path: C:\Users\boni\.cache\selenium\chromedriver\win64\117.0.5938.22\chromedriver.exe
-INFO    Browser path: C:\Users\boni\.cache\selenium\chrome\win64\117.0.5938.22\chrome.exe
+DEBUG chromedriver not found in PATH
+DEBUG chrome not found in PATH
+DEBUG chrome beta not found in the system
+DEBUG Discovering versions from https://googlechromelabs.github.io/chrome-for-testing/last-known-good-versions-with-downloads.json
+DEBUG Required browser: chrome 140.0.7339.16
+DEBUG Acquiring lock: C:\Users\boni\.cache\selenium\chrome\win64\140.0.7339.16\sm.lock
+DEBUG Downloading chrome 140.0.7339.16 from https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.16/win64/chrome-win64.zip
+DEBUG chrome 140.0.7339.16 is available at C:\Users\boni\.cache\selenium\chrome\win64\140.0.7339.16\chrome.exe
+DEBUG Discovering versions from https://googlechromelabs.github.io/chrome-for-testing/known-good-versions-with-downloads.json
+DEBUG Required driver: chromedriver 140.0.7339.16
+DEBUG Acquiring lock: C:\Users\boni\.cache\selenium\chromedriver\win64\140.0.7339.16\sm.lock
+DEBUG Downloading chromedriver 140.0.7339.16 from https://storage.googleapis.com/chrome-for-testing-public/140.0.7339.16/win64/chromedriver-win64.zip
+INFO  Driver path: C:\Users\boni\.cache\selenium\chromedriver\win64\140.0.7339.16\chromedriver.exe
+INFO  Browser path: C:\Users\boni\.cache\selenium\chrome\win64\140.0.7339.16\chrome.exe
 ```
 
 ### Using Selenium Manager from the bindings
